@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, inject } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CategoryService } from '../../services/category.service';
@@ -6,11 +6,14 @@ import { Category } from '../../models/category';
 import { FormsModule } from '@angular/forms';
 import { filter } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
+declare var bootstrap: any;
 
 @Component({
-  imports: [CommonModule, RouterLink, RouterLinkActive, FormsModule],
   selector: 'app-navbar',
   standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive, FormsModule, LoginComponent, RegisterComponent],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
@@ -19,14 +22,15 @@ export class NavbarComponent implements OnInit {
   searchTerm: string = '';
   isLoggedIn = false;
   userName = '';
+  isModalOpen = false;
 
   @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
 
-  private categoryService = inject(CategoryService);
-  private router = inject(Router);
-  private authService = inject(AuthService);
-
-  ngOnInit(): void {
+  constructor(
+    private categoryService: CategoryService,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.categoryService.getAllCategories().subscribe(categories => {
       this.categories = categories;
     });
@@ -46,19 +50,21 @@ export class NavbarComponent implements OnInit {
     this.authService.userName$.subscribe(name => this.userName = name);
   }
 
-  register() {
-  // Simulación rápida: en una app real mostrarías un formulario
-  try {
-    this.authService.register('demo@email.com', '1234', 'Demo');
-    alert('Usuario registrado y logueado');
-  } catch (e) {
-    alert('El usuario ya existe');
+  ngOnInit(): void {
   }
-}
+
+  register() {
+    // Simulación rápida: en una app real mostrarías un formulario
+    try {
+      this.authService.register('demo@email.com', '1234', 'Demo');
+      alert('Usuario registrado y logueado');
+    } catch (e) {
+      alert('El usuario ya existe');
+    }
+  }
 
   login() {
     // Aquí deberías mostrar un modal o formulario real
-    // Simulación rápida:
     try {
       this.authService.login('demo@email.com', '1234', 'Demo');
     } catch (e) {
@@ -68,6 +74,23 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  closeModal() {
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    if (loginModal) {
+      const modal = bootstrap.Modal.getInstance(loginModal);
+      if (modal) {
+        modal.hide();
+      }
+    }
+    if (registerModal) {
+      const modal = bootstrap.Modal.getInstance(registerModal);
+      if (modal) {
+        modal.hide();
+      }
+    }
   }
 
   trackById(index: number, category: Category): number {

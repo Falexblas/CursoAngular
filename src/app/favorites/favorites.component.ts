@@ -21,7 +21,7 @@ export class FavoritesComponent implements OnInit {
   ngOnInit(): void {
     this.authService.userName$.subscribe(name => {
       this.userName = name;
-      this.favorites = this.favoritesService.getFavorites(name);
+      this.favorites = this.favoritesService.getFavorites();
     });
   }
 }

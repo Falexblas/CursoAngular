@@ -34,7 +34,7 @@ export class MovieDetailComponent implements OnInit {
         this.movieService.getMovieById(id).subscribe(movie => {
           this.movie = movie || null;
           if (this.movie && this.userName) {
-            this.isFavorite = this.favoritesService.isFavorite(this.userName, this.movie.id);
+            this.isFavorite = this.favoritesService.isFavorite(this.movie.id);
           }
         });
       } else {
@@ -43,15 +43,20 @@ export class MovieDetailComponent implements OnInit {
     });
 
     this.authService.isLoggedIn$.subscribe(logged => this.isLoggedIn = logged);
-    this.authService.userName$.subscribe(name => this.userName = name);
+    this.authService.userName$.subscribe(name => {
+      this.userName = name;
+      if (this.movie && this.userName) {
+        this.isFavorite = this.favoritesService.isFavorite(this.movie.id);
+      }
+    });
   }
 
   toggleFavorite() {
     if (!this.movie || !this.userName) return;
     if (this.isFavorite) {
-      this.favoritesService.removeFavorite(this.userName, this.movie.id);
+      this.favoritesService.removeFavorite(this.movie.id);
     } else {
-      this.favoritesService.addFavorite(this.userName, this.movie);
+      this.favoritesService.addFavorite(this.movie);
     }
     this.isFavorite = !this.isFavorite;
   }
