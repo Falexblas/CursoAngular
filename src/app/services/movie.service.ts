@@ -73,6 +73,72 @@ export class MovieService {
       duration: '2h 28m',
       categories: [3, 5, 4], // Ciencia ficción, Acción, Aventura
       rating: 8.8
+    },
+    {
+      id: 7,
+      title: 'Spider-Man: No Way Home',
+      description: 'Con la identidad de Spider-Man ahora revelada, Peter recurre al Doctor Strange en busca de ayuda, pero las cosas se complican cuando un hechizo sale mal.',
+      posterUrl: 'https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=JfVOs4VSpmA',
+      year: 2021,
+      duration: '2h 28m',
+      categories: [3, 4, 5], // Ciencia ficción, Aventura, Acción
+      rating: 8.5
+    },
+    {
+      id: 8,
+      title: 'Harry Potter y la Piedra Filosofal',
+      description: 'Un niño huérfano se inscribe en una escuela de magia y hechicería, donde aprende la verdad sobre sí mismo, su familia y el terrible mal que acecha al mundo mágico.',
+      posterUrl: 'https://m.media-amazon.com/images/I/71x1RHSaEhL._AC_UF1000,1000_QL80_.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=VyHV0BRtdxo',
+      year: 2001,
+      duration: '2h 32m',
+      categories: [4, 6], // Aventura, Fantasía
+      rating: 7.6
+    },
+    {
+      id: 9,
+      title: 'It',
+      description: 'En el verano de 1989, un grupo de niños intimidados se unen para destruir a un monstruo cambiante, que se disfraza de payaso y se aprovecha de los niños de Derry, su pequeña ciudad de Maine.',
+      posterUrl: 'https://es.web.img3.acsta.net/pictures/17/04/07/12/58/197841.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=xKJmEC5ieOk',
+      year: 2017,
+      duration: '2h 15m',
+      categories: [7], // Terror
+      rating: 7.3
+    },
+    {
+      id: 10,
+      title: 'Star Wars: El Despertar de la Fuerza',
+      description: 'Treinta años después de la derrota del Imperio Galáctico, surge una nueva amenaza: la Primera Orden, y solo un grupo de héroes puede impedirles conquistar la galaxia.',
+      posterUrl: 'https://es.web.img2.acsta.net/pictures/15/10/19/09/45/248618.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=sGbxmsDFVnE',
+      year: 2015,
+      duration: '2h 16m',
+      categories: [3, 4, 5], // Ciencia ficción, Aventura, Acción
+      rating: 7.8
+    },
+    {
+      id: 11,
+      title: 'Maze Runner: Correr o Morir',
+      description: 'Thomas es depositado en una comunidad de chicos tras haber borrado su memoria, pronto aprende que están todos atrapados en un laberinto, y que deberá unirse a la comunidad para escapar.',
+      posterUrl: 'https://m.media-amazon.com/images/M/MV5BNTM4OTZlNzYtODA2NS00NmQ5LTg2OGQtN2ViZGE2YzE1ZGYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=64-iSYVmMVY',
+      year: 2014,
+      duration: '1h 53m',
+      categories: [3, 4, 5], // Ciencia ficción, Aventura, Acción
+      rating: 6.8
+    },
+    {
+      id: 12,
+      title: 'Joker',
+      description: 'En Gotham City, el comediante con problemas mentales Arthur Fleck es ignorado y maltratado por la sociedad. Luego emprende una espiral descendente de revolución y crímenes sangrientos que lo lleva cara a cara con su alter ego: el Joker.',
+      posterUrl: 'https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=zAGVQLHvwOY',
+      year: 2019,
+      duration: '2h 2m',
+      categories: [1, 2], // Drama, Crimen
+      rating: 8.4
     }
   ];
 

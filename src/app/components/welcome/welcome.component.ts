@@ -203,6 +203,14 @@ declare var bootstrap: any;
       overflow-y: auto;
       height: 100vh;
       max-height: 100vh;
+      /* Ocultar la barra de desplazamiento pero mantener la funcionalidad de scroll */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer y Edge */
+    }
+    
+    /* Ocultar la barra de desplazamiento para Chrome, Safari y Opera */
+    .movie-grid-background::-webkit-scrollbar {
+      display: none;
     }
 
     .movie-card {
