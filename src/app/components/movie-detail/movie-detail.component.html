@@ -32,10 +32,14 @@
     <div class="video-container">
       <!-- En una aplicación real, aquí iría el reproductor de video -->
       <div class="video-player">
-        <video controls class="w-100">
-          <source [src]="movie.videoUrl" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
+        <!-- Usando iframe para reproducir videos -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item w-100" style="height: 735px;" 
+                  [src]="safeVideoUrl" 
+                  frameborder="0" 
+                  allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
     

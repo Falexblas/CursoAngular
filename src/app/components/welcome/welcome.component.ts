@@ -377,22 +377,30 @@ export class WelcomeComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Mostrar el modal automáticamente cuando se inicializa el componente
-    setTimeout(() => {
-      const modalElement = document.getElementById('welcomeModal');
-      if (modalElement) {
-        // Verificar si ya existe una instancia del modal
-        let modal = bootstrap.Modal.getInstance(modalElement);
-        if (!modal) {
-          // Si no existe, crear una nueva instancia
-          modal = new bootstrap.Modal(modalElement, {
-            backdrop: 'static',
-            keyboard: false
-          });
+    // Verificar si el modal ya ha sido mostrado anteriormente
+    const hasSeenWelcomeModal = localStorage.getItem('hasSeenWelcomeModal');
+    
+    // Solo mostrar el modal si el usuario no lo ha visto antes
+    if (!hasSeenWelcomeModal) {
+      setTimeout(() => {
+        const modalElement = document.getElementById('welcomeModal');
+        if (modalElement) {
+          // Verificar si ya existe una instancia del modal
+          let modal = bootstrap.Modal.getInstance(modalElement);
+          if (!modal) {
+            // Si no existe, crear una nueva instancia
+            modal = new bootstrap.Modal(modalElement, {
+              backdrop: 'static',
+              keyboard: false
+            });
+          }
+          modal.show();
+          
+          // Guardar en localStorage que el usuario ya ha visto el modal
+          localStorage.setItem('hasSeenWelcomeModal', 'true');
         }
-        modal.show();
-      }
-    }, 300); // Pequeño retraso para asegurar que el DOM está listo
+      }, 300); // Pequeño retraso para asegurar que el DOM está listo
+    }
   }
 
   closeModal() {
