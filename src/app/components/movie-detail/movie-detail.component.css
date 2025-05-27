@@ -7,6 +7,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 .movie-header .movie-title .year {
@@ -16,7 +17,7 @@
 
 .movie-header .movie-meta {
   font-size: 1rem;
-  color: #6c757d;
+  color: #989da0;
 }
 
 .movie-header .movie-meta .divider {
@@ -53,23 +54,25 @@
 }
 
 .movie-description {
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  padding: 2rem;
+  background: #181818;
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
   margin-top: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(191,161,74,0.07);
+  border: 1.5px solid #bfa14a;
+  margin-bottom: 2rem;
 }
 
 .movie-description h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  color: #bfa14a;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .movie-description p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #495057;
+  color: #e1e1e1;
+  font-size: 1.15rem;
 }
 
 .back-button {

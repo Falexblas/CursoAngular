@@ -1,22 +1,24 @@
-<div class="container">
-  <h2 class="section-title">
-  @if (currentCategory) {
-    Películas de {{ currentCategory.name }}
-  } @else if (selectedCategoryId === null && route.snapshot.queryParamMap.get('q')) {
-    Resultados de búsqueda: "{{ route.snapshot.queryParamMap.get('q') }}"
-  } @else {
-    Todas las Películas
-  }
-</h2>
+<div class="container movie-list-container">
+  <h2 class="section-title gold-title">
+    @if (currentCategory) {
+      Películas de {{ currentCategory.name }}
+    } @else if (selectedCategoryId === null && route.snapshot.queryParamMap.get('q')) {
+      Resultados de búsqueda: "{{ route.snapshot.queryParamMap.get('q') }}"
+    } @else {
+      Todas las Películas
+    }
+  </h2>
 
   <div class="row">
     @for (movie of movies | filterCategory: selectedCategoryId; track movie.id) {
       <div class="col-md-4 col-sm-6">
-        <app-movie-card [movie]="movie"></app-movie-card>
+        <div class="movie-list-card">
+          <app-movie-card [movie]="movie"></app-movie-card>
+        </div>
       </div>
     } @empty {
       <div class="col-12">
-        <div class="alert alert-info">
+        <div class="alert alert-info gold-alert">
           No se encontraron películas
         </div>
       </div>
