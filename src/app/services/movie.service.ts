@@ -139,6 +139,39 @@ export class MovieService {
       duration: '2h 2m',
       categories: [1, 2], // Drama, Crimen
       rating: 8.4
+    },
+    {
+      id: 13,
+      title: 'El lobo de Wall Street',
+      description: 'Basada en la historia real de Jordan Belfort, desde su ascenso a un adinerado corredor de bolsa que vive la gran vida hasta su caída que involucra el crimen, la corrupción y el gobierno federal.',
+      posterUrl: 'https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=iszwuX1AK6A',
+      year: 2013,
+      duration: '3h 0m',
+      categories: [1, 2, 8], // Drama, Crimen, Comedia
+      rating: 8.2
+    },
+    {
+      id: 14,
+      title: 'Amigos de armas',
+      description: 'Dos amigos de la infancia se reúnen en Miami en sus veinte años y explotan un programa gubernamental poco conocido que arma a los pequeños negocios durante la guerra de Irak.',
+      posterUrl: 'https://m.media-amazon.com/images/M/MV5BMjEyNzQ0NzM4MV5BMl5BanBnXkFtZTgwMDI0ODM2OTE@._V1_.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=Rwh9c_E3dJk',
+      year: 2016,
+      duration: '1h 54m',
+      categories: [1, 2, 8], // Drama, Crimen, Comedia
+      rating: 7.1
+    },
+    {
+      id: 15,
+      title: 'Atrápame si puedes',
+      description: 'Un agente del FBI persigue a Frank Abagnale Jr., quien antes de cumplir 19 años logró estafar millones de dólares haciéndose pasar por piloto, doctor y abogado.',
+      posterUrl: 'https://m.media-amazon.com/images/M/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_.jpg',
+      videoUrl: 'https://www.youtube.com/watch?v=s-7pyIxz8Qg',
+      year: 2002,
+      duration: '2h 21m',
+      categories: [1, 2, 4], // Drama, Crimen, Aventura
+      rating: 8.1
     }
   ];
 
