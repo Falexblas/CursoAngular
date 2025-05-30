@@ -30,16 +30,13 @@
   
   <div class="movie-content mt-2">
     <div class="video-container">
-      <!-- En una aplicación real, aquí iría el reproductor de video -->
-      <div class="video-player">
-        <!-- Usando iframe para reproducir videos -->
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item w-100" style="height: 735px;" 
-                  [src]="safeVideoUrl" 
-                  frameborder="0" 
-                  allowfullscreen>
-          </iframe>
-        </div>
+      <div class="video-player ratio ratio-16x9">
+        <iframe
+          [src]="safeVideoUrl"
+          frameborder="0"
+          allowfullscreen
+          class="w-100 h-100">
+        </iframe>
       </div>
     </div>
     
