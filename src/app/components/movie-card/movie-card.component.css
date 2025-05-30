@@ -23,9 +23,37 @@
 
 .poster img {
   width: 100%;
-  height: 590px;
-  object-fit: cover;
+  max-height: 590px;
+  height: auto;
+  object-fit: contain;
   transition: transform 0.3s;
+  aspect-ratio: 2/3; /* Mantiene la proporción de la imagen */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 767.98px) {
+  .movie-card {
+    transform: scale(0.95);
+    margin: -5px;
+  }
+  
+  .poster img {
+    max-height: 400px;
+    /* Mantenemos aspect-ratio definido arriba */
+  }
+  
+  .movie-info {
+    padding: 0.5rem;
+  }
+  
+  .movie-info .title {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .movie-info .metadata {
+    font-size: 0.8rem;
+  }
 }
 
 .poster .overlay {
